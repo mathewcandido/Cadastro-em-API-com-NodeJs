@@ -1,0 +1,16 @@
+
+
+{{!--form--}}
+<form action="/editar" method="POST">
+    <img src='../imagens/kathryn on Twitter.jpg' >
+
+    <input type="text" value={{dados.id}} name="id" class="form-control" readonly>
+    <input type="text" value={{dados.nome}}   name="nome" class="form-control">
+    <input type="text" value={{dados.idade}}  name="idade" class="form-control">
+    <input type="submit" value="Editar" class="btn btn-warning">
+
+    <a href="/remover/{{dados.id}}" class="btn btn-danger">Remover</a>
+    {{!--volta para rota pradrão '/' --}}
+    <a href="/" class="btn btn-secondary" >Cancelar</a>
+</form>
+

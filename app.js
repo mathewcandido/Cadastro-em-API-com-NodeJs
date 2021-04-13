@@ -47,6 +47,43 @@ app.post("/cadastrar", function(req,res){
     .then(res.redirect('/'));
 });
 
+app.get('/selecionar/:id',function(req,res){
+    //guardando o ID
+    let id = req.params.id;
+
+    fetch('http://localhost:3000/clientes/'+id,{method:"GET"})
+    .then(response => response.json())
+    .then(response => res.render('selecionar',{dados:response}))
+
+});
+
+app.post('/editar',function(req,res){
+
+    let nome = req.body.nome;
+    let idade = req.body.idade;
+    let id = req.body.id;
+    let dados = {'nome':nome,'idade':idade}
+    
+    fetch('http://localhost:3000/clientes/'+id,{
+        method:'PUT',
+        body:JSON.stringify({'nome':nome,'idade':idade}),
+        //tipo de dados
+        headers:{'Content-Type':'application/json'}
+    })
+    .then(res.redirect('/'));
+})
+
+app.get('/remover/:id',function(req,res){
+
+    let id= req.params.id;
+
+    fetch('http://localhost:3000/clientes/'+id,{method:"DELETE"})
+    .then(res.redirect('/'));
+})
+
+
+
+
 
 app.listen(8080,function(){
     console.log('Servidor Rodando')
