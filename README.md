@@ -10,6 +10,6 @@
 - Nodemon
 
 *Dicas para executar:
-- Front : npm i =  para Instalar o node-modules;
-- Back: json-server cliente.json para exutar a Fake API ;
+- Front : npm i =  para Instalar o node-modules ; nodemon app.js para rodar o projeto !
+
  
