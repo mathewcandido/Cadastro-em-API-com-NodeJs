@@ -1,0 +1,36 @@
+
+
+{{!--form--}}
+<form>
+    <img src='imagens/kathryn on Twitter.jpg' >
+    <input type="text" placeholder="Nome"  class="form-control">
+    <input type="text" placeholder="idade" class="form-control">
+    <input type="submit" value="Cadastrar" class="btn btn-primary">
+
+</form>
+
+{{!--table--}}
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Nome:</th>
+            <th>Idade:</th>
+            <th>Id:</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        {{#each dados}}
+        <tr>
+        <td>{{Nome}} </td>
+        <td>{{Idade}} </td>
+        <td><a href="selecionar/{{Id}}">Selecionar</a></td>
+        </tr>
+        {{/each}}
+    
+    </tbody>
+
+</table>
