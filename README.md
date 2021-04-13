@@ -11,5 +11,6 @@
 
 *Dicas para executar:
 - Front : npm i =  para Instalar o node-modules ; nodemon app.js para rodar o projeto !
+- Back : json-server cliente.json.
 
  
