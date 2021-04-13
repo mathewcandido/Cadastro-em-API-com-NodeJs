@@ -28,7 +28,24 @@ app.get('/',function(req,res){
 
 });
 
+app.post("/cadastrar", function(req,res){
+    let nome = req.body.nome;
+    let idade = req.body.idade;
 
+    //retorno do form
+    let dados ={'nome':nome ,'idade':idade};
+
+    fetch('http://localhost:3000/clientes',{
+        //A caracteristica dessa rota é enviar então o method="POST"
+        method:'POST',
+       //As infromações que vamos utilizar: como cadastro 
+       //Para a Api não entender como um texto então foi convertido para Json 
+       body:JSON.stringify(dados),
+       //Espicificando para minha APi que minha informação é um Json
+       headers:{'Content-Type':'application/json'}
+    })
+    .then(res.redirect('/'));
+});
 
 
 app.listen(8080,function(){

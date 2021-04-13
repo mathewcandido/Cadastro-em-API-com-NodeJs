@@ -1,10 +1,10 @@
 
 
 {{!--form--}}
-<form>
+<form action="/cadastrar" method="POST">
     <img src='imagens/kathryn on Twitter.jpg' >
-    <input type="text" placeholder="Nome"  class="form-control">
-    <input type="text" placeholder="idade" class="form-control">
+    <input type="text" placeholder="Nome"  name="nome" class="form-control">
+    <input type="text" placeholder="Idade" name="idade" class="form-control">
     <input type="submit" value="Cadastrar" class="btn btn-primary">
 
 </form>
@@ -25,9 +25,9 @@
     <tbody>
         {{#each dados}}
         <tr>
-        <td>{{Nome}} </td>
-        <td>{{Idade}} </td>
-        <td><a href="selecionar/{{Id}}">Selecionar</a></td>
+        <td>{{nome}} </td>
+        <td>{{idade}} </td>
+        <td><a href="selecionar/{{id}}">Selecionar</a></td>
         </tr>
         {{/each}}
     
