@@ -3,7 +3,7 @@ const expressHandlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const app = express();
 const fetch = require('node-fetch');
-const { response } = require('express');
+
 
 //config handlebars
 app.engine('handlebars', expressHandlebars({defaultLayout:'principal'}));
@@ -45,6 +45,9 @@ app.post("/cadastrar", function(req,res){
        headers:{'Content-Type':'application/json'}
     })
     .then(res.redirect('/'));
+
+    
+
 });
 
 app.get('/selecionar/:id',function(req,res){
@@ -62,7 +65,7 @@ app.post('/editar',function(req,res){
     let nome = req.body.nome;
     let idade = req.body.idade;
     let id = req.body.id;
-    let dados = {'nome':nome,'idade':idade}
+    let  = {'nome':nome,'idade':idade}
     
     fetch('http://localhost:3000/clientes/'+id,{
         method:'PUT',
@@ -73,6 +76,7 @@ app.post('/editar',function(req,res){
     .then(res.redirect('/'));
 })
 
+
 app.get('/remover/:id',function(req,res){
 
     let id= req.params.id;
@@ -80,7 +84,6 @@ app.get('/remover/:id',function(req,res){
     fetch('http://localhost:3000/clientes/'+id,{method:"DELETE"})
     .then(res.redirect('/'));
 })
-
 
 
 

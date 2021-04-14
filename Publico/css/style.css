@@ -2,10 +2,22 @@
 html,body{ 
     width: 100%;
     text-align: center;
+    background-image: url(../imagens/image-social.jpg);
+   
+    background-size: 100% 100%;
+    
+
 
 }
+td a{
+    color:black;
+    
+}
+td a:hover{
+    color:aliceblue;
+}
 form{
-
+    
     width: 500px;
     margin: 30px auto;
     text-align: center;
@@ -15,7 +27,9 @@ form input{
 }
 
 table{
+    color:white;
     max-width: 800px;
+    height: auto;
     margin: 0 auto;
     
 }
